@@ -1,0 +1,236 @@
+:root {
+    --yellow: #ffc600;
+    --black: #272727;
+  }
+
+html {
+    font-family: 'Lato', sans-serif;   
+    color: var(--black); 
+}
+
+/* Main Wrapper */
+.wrap {
+    display: grid;
+    max-width: 1000px;
+    margin: auto;
+    grid-row-gap: 20px;
+    margin-top: 10%;
+}
+
+/* Header and Nav Areas */
+header {
+    display: grid;
+    grid-template-areas: 
+        "name links links"
+        "tag . .";
+    margin: 0 30px;
+    }
+
+    header ul {
+        display: grid;
+        grid-area: links;
+        grid-gap: 10px;
+        padding: 0;
+        list-style: none;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    header li a{
+        display: block;
+        text-decoration: none;
+        padding: 5px;
+        text-align: center;
+        color: var(--black);
+        background: var(--yellow);
+    }
+
+    header h5 {
+        display: grid;
+        grid-area: tag;
+        margin-top: -20px;
+        font-weight: 200;
+        font-style: italic;
+    }
+    
+
+/* Individual Portfolio Piece */
+.item {
+    display: grid;
+    grid-template-areas: 
+        "about img img"
+        "about img img"
+        "footer footer footer";
+}
+
+    .about {
+        grid-area: about;
+        margin: 10px;
+        padding: 10px 30px;
+        /* border: 1px dashed pink; */
+        place-self: center;
+    }
+
+    .img-box {
+        grid-area: img;
+        min-height: 500px;
+        position: relative;
+        padding-left: 5%;
+        /* border: 2px dashed blue; */
+    }
+
+        .__main-photo {
+            width: 80%;
+            margin: 10px;
+            box-shadow: 0 0 15px rgba(66, 66, 66, 0.8);
+        }
+
+        .__mobile-photo {
+            width: 20%;
+            position: absolute;
+            right: 25%;
+            top: 250px;
+            box-shadow: 0 0 15px rgba(66, 66, 66, 0.8);
+        }
+
+/* Secondary Item Formatting for Alternating Alignment */
+.item2 {
+    display: grid;
+    grid-template-areas: 
+        "img img about"
+        "img img about"
+        "footer footer footer";
+    padding-left: 50px;
+}
+
+/* Footer Area */
+.tech {
+    grid-area: tech;
+    /* border: 1px dashed purple; */
+    margin: 10px;
+    padding: 10px 30px;
+    align-self: start;
+}
+
+footer {
+    grid-area: footer;
+    display: grid;
+    text-align: center;
+    font-weight: 200;
+    margin-top: 20px;
+}
+
+._visit {
+    width: 100px;
+    box-shadow: 0 0 5px rgba(66, 66, 66, 0.8);
+    background-color: rgba(0, 153, 255, 0.49);
+    text-decoration: none;
+    padding: 5px;
+    align-items: center;
+}
+
+._visit a {
+    color: #333333;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+
+
+@media (max-width: 840px) {
+    header {
+        display: grid;
+        grid-template-areas: 
+            "name name tag"
+            "links links links"
+    }
+    header h5 {
+        align-content: center;
+        margin: 5px;
+    }
+    header h1 {
+        align-content: center;
+        margin: 5px;
+    }
+    .img-box {
+        display: grid;
+        align-content: center;
+        min-height: auto;
+    }
+    .__mobile-photo {
+        display: none;
+    }
+}
+
+
+@media (max-width: 520px) {
+    .item {
+        display: grid;
+        grid-template-areas: 
+            "about about about"
+            "img img img"
+            "footer footer footer";
+        padding-left: 50px;
+    }
+
+    .item2 {
+        display: grid;
+        grid-template-areas: 
+        "about about about"
+        "img img img"
+        "footer footer footer";
+        padding-left: 50px;
+    }
+    .about {
+        grid-area: about;
+        margin: 10px;
+        padding: 10px 50px 10px 5px;
+        /* border: 1px dashed pink; */
+        place-self: center;
+    }
+}
+
+
+
+
+@media (max-width: 335px) {
+    header {
+        display: grid;
+        grid-template-areas: 
+            "name name name"
+            "tag tag tag"
+            "links links links"
+    }
+    header ul {
+        display: grid;
+        grid-area: links;
+        grid-gap: 0px;
+        padding: 0;
+        list-style: none;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        font-size: .8em;
+    }
+
+
+    .about {
+        grid-area: about;
+        margin: 10px;
+        padding: 10px 10px;
+        /* border: 1px dashed pink; */
+        place-self: center;
+    }
+
+    .about ._visit {
+        margin: auto;
+    }
+
+    .item {
+        padding-left: 5px;
+    }
+    .item2 {
+        padding-left: 5px;
+    }
+    
+
+
+
+}

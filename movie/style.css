@@ -1,0 +1,12 @@
+#ratingSection {
+    text-align: center;
+}
+
+.rate-source {
+    text-align: center;
+}
+
+.rate-actual {
+    text-align: center;
+    font-size: 1.5em;
+}
